@@ -18,6 +18,9 @@ public record DadosCadastroTalentos(
         @Email
         String email,
         @NotBlank
+        String linkedIn,
+
+        @NotBlank
         String celular,
         @NotBlank
         String Data_de_Nascimento,
