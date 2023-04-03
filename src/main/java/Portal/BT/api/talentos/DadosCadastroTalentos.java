@@ -1,6 +1,8 @@
 package Portal.BT.api.talentos;
 
 import Portal.BT.api.endereço.DadosEndereço;
+import Portal.BT.api.experiencia.dadosExperiencia;
+import Portal.BT.api.experiencia.recordExperiencia;
 import Portal.BT.api.formacao.Formacao;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -12,13 +14,13 @@ public record DadosCadastroTalentos(
 
         @NotBlank
         String nome,
-        @NotBlank
+        @NotNull
         String CPF,
         @NotBlank
         @Email
         String email,
         @NotBlank
-        String linkedIn,
+        String linkedin,
 
         @NotBlank
         String celular,
@@ -33,6 +35,9 @@ public record DadosCadastroTalentos(
         @Valid
         Formacao Formação,
         @NotBlank
-        String Biografia
+        String Biografia,
+
+        recordExperiencia experiencia
+
 ) {
 }

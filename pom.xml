@@ -76,6 +76,25 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>8.0.1</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/portalbt_api</url>
+					<user>root</user>
+					<password>Stoked1203!</password>
+				</configuration>
+				<executions>
+					<execution>
+						<id>flyway-migrate</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>migrate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

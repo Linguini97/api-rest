@@ -21,4 +21,19 @@ public class DadosEndereco {
         this.Estado = dados.Estado();
         this.País = dados.País();
     }
+
+    public void atualizarInformacoes(DadosEndereço dados) {
+        if(dados.Cep() != null){
+            this.Cep = dados.Cep();
+        }
+        if(dados.Cidade() != null){
+            this.Cidade = dados.Cidade();
+        }
+        if(dados.Estado() != null){
+            this.Estado = dados.Estado();
+        }
+        if(dados.País() != null){
+            this.País = dados.País();
+        }
+    }
 }

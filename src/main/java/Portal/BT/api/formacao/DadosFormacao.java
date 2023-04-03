@@ -21,4 +21,19 @@ public class DadosFormacao {
         this.Situação = dados.Situação();
         this.Ano_de_Formação = dados.Ano_de_Formação();
     }
+
+    public void atualizarInformacoes(Formacao dados) {
+        if(dados.Curso() != null){
+            this.Curso = dados.Curso();
+        }
+        if(dados.Instituição() != null){
+            this.Instituição = dados.Instituição();
+        }
+        if(dados.Situação() != null){
+            this.Situação = dados.Situação();
+        }
+        if(dados.Ano_de_Formação() != null){
+            this.Ano_de_Formação = dados.Ano_de_Formação();
+        }
+    }
 }

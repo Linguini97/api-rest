@@ -1,0 +1,1 @@
+alter table talentos add  linkedIn varchar (200) not null;

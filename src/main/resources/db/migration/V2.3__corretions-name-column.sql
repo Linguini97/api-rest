@@ -1,0 +1,1 @@
+alter table talentos rename column dataEntrada to data_Entrada;

@@ -1,11 +1,13 @@
 package Portal.BT.api.talentos;
 
 import Portal.BT.api.endereço.DadosEndereco;
+import Portal.BT.api.experiencia.dadosExperiencia;
 import Portal.BT.api.formacao.DadosFormacao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,7 +24,7 @@ public class Talento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private String CPF;
+    private @NotNull String CPF;
     private String email;
     private String celular;
     private String Data_de_Nascimento;
@@ -34,6 +36,10 @@ public class Talento {
     private DadosFormacao Formação;
     private String Biografia;
 
+    private dadosExperiencia experiencia;
+
+    private String linkedin;
+
     public Talento(DadosCadastroTalentos dados) {
         this.nome = dados.nome();
         this.CPF = dados.CPF();
@@ -44,5 +50,28 @@ public class Talento {
         this.endereço = new DadosEndereco(dados.endereço());
         this.Formação = new DadosFormacao(dados.Formação());
         this.Biografia = dados.Biografia();
+        this.experiencia = new dadosExperiencia(dados.experiencia());
+        this.linkedin = dados.linkedin();
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoTalentos dados) {
+        if(dados.linkedin() != null){
+            this.linkedin = dados.linkedin();
+        }
+        if(dados.celular() != null){
+            this.celular = dados.celular();
+        }
+        if(dados.endereço() != null){
+            this.endereço.atualizarInformacoes(dados.endereço());
+        }
+        if(dados.Formação() != null){
+            this.Formação.atualizarInformacoes(dados.Formação());
+        }
+        if(dados.Biografia() != null){
+            this.Biografia = dados.Biografia();
+        }
+        if(dados.experiencia() != null){
+            this.experiencia.atualizarInformacoes(dados.experiencia());
+        }
     }
 }

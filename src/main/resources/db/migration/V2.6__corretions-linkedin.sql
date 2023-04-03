@@ -1,0 +1,1 @@
+alter table talentos rename column linkedIn to linkedin;
