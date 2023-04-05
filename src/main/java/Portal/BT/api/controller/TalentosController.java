@@ -3,7 +3,9 @@ package Portal.BT.api.controller;
 import Portal.BT.api.endereço.DadosEndereco;
 import Portal.BT.api.talentos.*;
 import jakarta.validation.Valid;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,23 +19,33 @@ public class TalentosController {
     private TalentoRepository repository;
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroTalentos dados){
+    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroTalentos dados){
 
         repository.save(new Talento(dados));
     }
     @GetMapping
-    public List<DadosListagemTalentos> listar(){
+    public ResponseEntity<List<DadosListagemTalentos>> listar(){
 
-        return repository.findAll().stream().map(DadosListagemTalentos::new).toList();
+        var page = repository.findAll().stream().map(DadosListagemTalentos::new).toList();
+        return ResponseEntity.ok(page);
     }
-@PutMapping
-@Transactional
-    public  void atualizar(@RequestBody @Valid DadosAtualizacaoTalentos dados){
+    @PutMapping
+    @Transactional
+    public  ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoTalentos dados){
         var talento = repository.findByCPF(dados.CPF());
         if (talento != null){
             talento.atualizarInformacoes(dados);
+            return ResponseEntity.ok(new DadosDetalhamentoTalento(talento));
+
         } else {
             throw new RuntimeException("Talento não encontrado");
         }
+}
+    @DeleteMapping("/{CPF}")
+    @Transactional
+    public ResponseEntity excluir(@PathVariable String CPF){
+        repository.deleteByCPF(CPF);
+
+        return ResponseEntity.noContent().build();
 }
 }

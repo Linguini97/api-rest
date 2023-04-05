@@ -1,17 +1,16 @@
 package Portal.BT.api.talentos;
 
+import Portal.BT.api.endereço.DadosEndereco;
 import Portal.BT.api.endereço.DadosEndereço;
 import Portal.BT.api.experiencia.dadosExperiencia;
 import Portal.BT.api.experiencia.recordExperiencia;
+import Portal.BT.api.formacao.DadosFormacao;
 import Portal.BT.api.formacao.Formacao;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 
-public record DadosCadastroTalentos(
-
+public record DadosDetalhamentoTalento(
         @NotBlank
         String nome,
         @NotNull
@@ -27,14 +26,17 @@ public record DadosCadastroTalentos(
 
         Gênero Gênero,
 
-        DadosEndereço endereço,
+        DadosEndereco endereço,
 
 
-        Formacao Formação,
+        DadosFormacao Formação,
 
         String Biografia,
 
-        recordExperiencia experiencia
+        dadosExperiencia experiencia
 
 ) {
+    public DadosDetalhamentoTalento(Talento talento){
+        this(talento.getNome(),talento.getCPF(), talento.getEmail(), talento.getLinkedin(), talento.getCelular(), talento.getData_de_Nascimento(), talento.getGênero(), talento.getEndereço(),talento.getFormação(),talento.getBiografia(),talento.getExperiencia());
+    }
 }
