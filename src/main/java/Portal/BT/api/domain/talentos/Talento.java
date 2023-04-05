@@ -1,8 +1,8 @@
-package Portal.BT.api.talentos;
+package Portal.BT.api.domain.talentos;
 
-import Portal.BT.api.endereço.DadosEndereco;
-import Portal.BT.api.experiencia.dadosExperiencia;
-import Portal.BT.api.formacao.DadosFormacao;
+import Portal.BT.api.domain.endereço.DadosEndereco;
+import Portal.BT.api.domain.formacao.DadosFormacao;
+import Portal.BT.api.domain.experiencia.dadosExperiencia;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

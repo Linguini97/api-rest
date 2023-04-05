@@ -1,4 +1,4 @@
-package Portal.BT.api.experiencia;
+package Portal.BT.api.domain.experiencia;
 import jakarta.validation.constraints.NotBlank;
 public record recordExperiencia(
         @NotBlank

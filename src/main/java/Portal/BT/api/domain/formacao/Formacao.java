@@ -1,8 +1,7 @@
-package Portal.BT.api.formacao;
+package Portal.BT.api.domain.formacao;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 
 public record Formacao(
         @NotBlank

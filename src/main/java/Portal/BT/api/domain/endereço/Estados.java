@@ -1,4 +1,4 @@
-package Portal.BT.api.endereço;
+package Portal.BT.api.domain.endereço;
 
 public enum Estados {
     RO,

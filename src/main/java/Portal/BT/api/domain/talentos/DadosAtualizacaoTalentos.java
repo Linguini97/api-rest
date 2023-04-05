@@ -1,8 +1,8 @@
-package Portal.BT.api.talentos;
+package Portal.BT.api.domain.talentos;
 
-import Portal.BT.api.endereço.DadosEndereço;
-import Portal.BT.api.experiencia.recordExperiencia;
-import Portal.BT.api.formacao.Formacao;
+import Portal.BT.api.domain.endereço.DadosEndereço;
+import Portal.BT.api.domain.experiencia.recordExperiencia;
+import Portal.BT.api.domain.formacao.Formacao;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoTalentos(

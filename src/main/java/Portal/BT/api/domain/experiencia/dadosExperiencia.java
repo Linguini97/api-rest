@@ -1,4 +1,4 @@
-package Portal.BT.api.experiencia;
+package Portal.BT.api.domain.experiencia;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

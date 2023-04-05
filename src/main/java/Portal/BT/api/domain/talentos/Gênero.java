@@ -1,4 +1,4 @@
-package Portal.BT.api.talentos;
+package Portal.BT.api.domain.talentos;
 
 public enum Gênero {
     Masculino,

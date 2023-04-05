@@ -1,4 +1,4 @@
-package Portal.BT.api.formacao;
+package Portal.BT.api.domain.formacao;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

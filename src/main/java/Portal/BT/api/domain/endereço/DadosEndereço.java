@@ -1,4 +1,4 @@
-package Portal.BT.api.endereço;
+package Portal.BT.api.domain.endereço;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

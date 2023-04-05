@@ -1,11 +1,8 @@
-package Portal.BT.api.talentos;
+package Portal.BT.api.domain.talentos;
 
-import Portal.BT.api.endereço.DadosEndereco;
-import Portal.BT.api.endereço.DadosEndereço;
-import Portal.BT.api.experiencia.dadosExperiencia;
-import Portal.BT.api.experiencia.recordExperiencia;
-import Portal.BT.api.formacao.DadosFormacao;
-import Portal.BT.api.formacao.Formacao;
+import Portal.BT.api.domain.endereço.DadosEndereco;
+import Portal.BT.api.domain.experiencia.dadosExperiencia;
+import Portal.BT.api.domain.formacao.DadosFormacao;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
